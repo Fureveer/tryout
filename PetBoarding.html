@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Furever - Pet Care Website </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white pr-3" href="FAQ.html">FAQs</a>
+                    <span class="text-white">|</span>
+                    <a class="text-white px-3" href="contact.html">Help</a>
+                    <span class="text-white">|</span>
+                    <a class="text-white pl-3" href="contact.html">Support</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row py-3 px-lg-5">
+            <div class="col-lg-4">
+                <a href="" class="navbar-brand d-none d-lg-block">
+                    <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">Fur</span>ever</h1>
+                </a>
+            </div>
+            <div class="col-lg-8 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <div class="d-inline-flex flex-column text-center pr-3 border-right">
+                        <h6>Opening Hours</h6>
+                        <p class="m-0">8.00AM - 9.00PM</p>
+                    </div>
+                    <div class="d-inline-flex flex-column text-center px-3 border-right">
+                        <h6>Email Us</h6>
+                        <p class="m-0">Furever69@gmail.com</p>
+                    </div>
+                    <div class="d-inline-flex flex-column text-center pl-3">
+                        <h6>Call Us</h6>
+                        <p class="m-0">+91 789996789</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">For</span>ever</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="price.html" class="nav-item nav-link">Subscription</a>
+                    <a href="booking.html" class="nav-item nav-link">Sign Up</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <!-- Button to trigger the modal -->
+<a href="#" class="btn btn-lg btn-primary px-3 d-none d-lg-block" data-toggle="modal" data-target="#quoteModal">Get Quote</a>
+
+<!-- Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="quoteModalLabel">Request a Quote</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your content submission form goes here -->
+                <form action="submit_quote.php" method="POST" id="quoteForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <!-- Success message (hidden by default) -->
+                <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+                    Your data has been submitted successfully!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to handle the success message -->
+<script>
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+        // Show the success message and hide the form
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('quoteForm').style.display = 'none';
+    });
+</script>
+
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Dog Breeds Section -->
+<section class="container py-5">
+    <h2 class="text-center mb-4">Dog Breeds</h2>
+    <div class="row">
+
+        <!-- Small Breed -->
+
+        <div class="col-md-6 mb-4">
+            <div class="dog-card">
+                <img src="img/price-3.jpg" class="card-img-top" alt="Small Dog Breed">
+                <div class="card-body">
+                    <h5 class="card-title">Small Breed</h5>
+                    <p class="card-text">Our small breed dogs are known for their charm and compact size. These pint-sized companions bring a lot of love and joy to your home. They're perfect for those seeking a furry friend that's easy to manage and fits snugly in your lap.</p>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="mr-2">
+                        <label>Check</label>
+                        <label>in:</label>
+                        <input type="date" name="checkin" id="checkin" class="form-input" required />
+                    </div>
+                    <div>
+                        <label>Check</label>
+                        <label>out:</label>
+                        <input type="date" name="checkout" id="checkout" class="form-input" required />
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <button class="btn btn-primary" id="calculateButton" onclick="calculateTotal()">Calculate Total</button>
+                </div>
+        
+                <!-- Display calculated amount -->
+                <div class="text-center mt-2">
+                    <p id="totalCost" style="display: none;"></p>
+                    <button class="btn btn-success" id="displayAmountButton" style="display: none;" onclick="displayAmount()">Display Amount</button>
+                    <button class="btn btn-primary" id="buyNowButton" style="display: none;" onclick="redirectToPayment()">Buy Now</button>
+                </div>
+                
+                <script>
+                    function calculateTotal() {
+                        // Get the check-in and check-out dates
+                        var checkinDate = new Date(document.getElementById('checkin').value);
+                        var checkoutDate = new Date(document.getElementById('checkout').value);
+                        
+                        // Calculate the number of days
+                        var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+                        var diffDays = Math.round(Math.abs((checkoutDate - checkinDate) / oneDay));
+                        
+                        // Calculate the total cost (assuming a cost of Rs. 699 per day)
+                        var totalCost = diffDays * 699;
+                        
+                        // Display the total cost
+                        var totalCostElement = document.getElementById('totalCost');
+                        totalCostElement.innerHTML = "Total Cost: Rs. " + totalCost;
+                        totalCostElement.style.display = "block";
+        
+                        // Show the "Display Amount" button
+                        var displayAmountButton = document.getElementById('displayAmountButton');
+                        displayAmountButton.style.display = "block";
+        
+                        // Hide the "Calculate Total" button
+                        var calculateButton = document.getElementById('calculateButton');
+                        calculateButton.style.display = "none";
+                    }
+        
+                    function displayAmount() {
+                        // Display the calculated amount
+                        var totalCostElement = document.getElementById('totalCost');
+                        totalCostElement.style.display = "block";
+        
+                        // Show the "Buy Now" button
+                        var buyNowButton = document.getElementById('buyNowButton');
+                        buyNowButton.style.display = "block";
+        
+                        // Hide the "Display Amount" button
+                        var displayAmountButton = document.getElementById('displayAmountButton');
+                        displayAmountButton.style.display = "none";
+                    }
+        
+                    function redirectToPayment() {
+                        // Redirect to the Payment page
+                        window.location.href = "Payment.html";
+                    }
+                </script>
+            </div>
+        </div>
+        
+        <!-- Large Breed -->
+        <div class="col-md-6 mb-4">
+            <div class="dog-card">
+                <img src="img/price-2.jpg" class="card-img-top" alt="Large Dog Breed">
+                <div class="card-body">
+                    <h5 class="card-title">Large Breed</h5>
+                    <p class="card-text">If you're looking for a loyal companion, our large breed dogs are the perfect choice. Known for their gentle nature, these majestic canines make great family pets. Their size is matched only by their big hearts, making them wonderful additions to any household.</p>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="mr-2">
+                        <label>Check</label>
+                        <label>in:</label>
+                        <input type="date" name="checkin" id="checkin-large" class="form-input" required />
+                    </div>
+                    <div>
+                        <label>Check</label>
+                        <label>out:</label>
+                        <input type="date" name="checkout" id="checkout-large" class="form-input" required />
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <button class="btn btn-primary" id="calculateButton-large" onclick="calculateTotalLarge()">Calculate Total</button>
+                </div>
+        
+                <!-- Display calculated amount -->
+                <div class="text-center mt-2">
+                    <p id="totalCost-large" style="display: none;"></p>
+                    <button class="btn btn-success" id="displayAmountButton-large" style="display: none;" onclick="displayAmountLarge()">Display Amount</button>
+                    <button class="btn btn-primary" id="buyNowButton-large" style="display: none;" onclick="redirectToPaymentLarge()">Buy Now</button>
+                </div>
+                
+                <script>
+                    function calculateTotalLarge() {
+                        // Get the check-in and check-out dates
+                        var checkinDate = new Date(document.getElementById('checkin-large').value);
+                        var checkoutDate = new Date(document.getElementById('checkout-large').value);
+                        
+                        // Calculate the number of days (assuming one-day service)
+                        var oneDay = 1; // One day
+                        var diffDays = Math.abs((checkoutDate - checkinDate)) / (1000 * 60 * 60 * 24);
+                        
+                        // Calculate the total cost (assuming a cost of Rs. 899 per day)
+                        var totalCost = diffDays * 899;
+                        
+                        // Display the total cost
+                        var totalCostElement = document.getElementById('totalCost-large');
+                        totalCostElement.innerHTML = "Total Cost: Rs. " + totalCost;
+                        totalCostElement.style.display = "block";
+        
+                        // Show the "Display Amount" and "Buy Now" buttons
+                        var displayAmountButton = document.getElementById('displayAmountButton-large');
+                        displayAmountButton.style.display = "block";
+                        var buyNowButton = document.getElementById('buyNowButton-large');
+                        buyNowButton.style.display = "none";
+                    }
+        
+                    function displayAmountLarge() {
+                        // Display the calculated amount
+                        var totalCostElement = document.getElementById('totalCost-large');
+                        totalCostElement.style.display = "block";
+        
+                        // Show the "Buy Now" button
+                        var buyNowButton = document.getElementById('buyNowButton-large');
+                        buyNowButton.style.display = "block";
+        
+                        // Hide the "Display Amount" button
+                        var displayAmountButton = document.getElementById('displayAmountButton-large');
+                        displayAmountButton.style.display = "none";
+                    }
+        
+                    function redirectToPaymentLarge() {
+                        // Redirect to the Payment page
+                        window.location.href = "Payment.html";
+                    }
+                </script>
+            </div>
+        </div>
+
+
+        
+
+
+    
+</body>
+</html>
+        
+
+
+
+
+
+ 
